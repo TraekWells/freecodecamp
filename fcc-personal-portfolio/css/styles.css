@@ -1,0 +1,217 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+.section, .footer {
+  padding: 7rem 0; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
+  @media screen and (max-width: 54.68em) {
+    html {
+      font-size: 59%; } }
+
+body {
+  font-family: "PT Sans", sans-serif; }
+
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+h1,
+h2 {
+  color: #444444; }
+
+h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 2rem; }
+
+h2 {
+  font-size: 3rem;
+  font-weight: 400; }
+
+h3 {
+  color: rgba(68, 68, 68, 0.1);
+  font-size: 11rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 5rem; }
+
+h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem; }
+
+#navbar {
+  background-color: #ffffff;
+  position: fixed;
+  width: 100%;
+  z-index: 10; }
+  #navbar ul {
+    display: flex;
+    justify-content: center; }
+  #navbar li {
+    list-style: none; }
+  #navbar a {
+    display: block;
+    color: #444444;
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 3rem 2rem; }
+
+#welcome-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  #welcome-section h2 {
+    max-width: 55rem;
+    text-align: center;
+    line-height: 1.5; }
+
+.call-out {
+  text-decoration: underline; }
+
+.section {
+  scroll-margin-top: 3rem; }
+  .section__gray {
+    background-color: #f7f7f7; }
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  row-gap: 4rem;
+  max-width: 85rem;
+  justify-content: center;
+  margin: 0 auto; }
+  @media screen and (max-width: 54.68em) {
+    .projects {
+      max-width: 90%;
+      row-gap: 2rem;
+      -moz-column-gap: 2rem;
+           column-gap: 2rem; } }
+  @media screen and (max-width: 37.5em) {
+    .projects {
+      grid-template-columns: 1fr; } }
+
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.1); }
+  .project-tile__image {
+    height: 20rem;
+    width: 100%;
+    position: relative; }
+    .project-tile__image img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      -o-object-fit: cover;
+         object-fit: cover; }
+  .project-tile__content {
+    padding: 2.5rem;
+    background-color: #ffffff; }
+  .project-tile__links {
+    display: flex;
+    justify-content: space-between; }
+    .project-tile__links a {
+      color: #006dc2;
+      text-decoration: none;
+      font-size: 1.6rem; }
+
+.bio {
+  background-color: #f7f7f7;
+  font-size: 1.8rem;
+  padding: 5rem;
+  line-height: 1.8;
+  border-radius: 0.7rem;
+  max-width: 70rem;
+  margin: 0 auto; }
+  @media screen and (max-width: 54.68em) {
+    .bio {
+      max-width: 90%; } }
+
+.footer {
+  background-color: #f7f7f7; }
+  .footer p.lead {
+    font-size: 2rem;
+    color: #444444;
+    text-align: center;
+    margin-bottom: 3rem; }
+  .footer .social-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 75rem;
+    margin: 0 auto; }
+    .footer .social-links li {
+      list-style: none; }
+    @media screen and (max-width: 54.68em) {
+      .footer .social-links {
+        flex-wrap: wrap; } }
+    .footer .social-links a {
+      display: block;
+      padding: 2rem 3rem;
+      text-decoration: none;
+      color: #444444;
+      font-size: 3rem;
+      font-weight: 700;
+      transition: 0.2s ease all; }
+      .footer .social-links a:hover {
+        border-bottom: 0.2rem solid #444444; }
