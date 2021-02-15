@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Technical Document</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main id="main-doc">
+      <nav id="navbar" class="nav">
+        <img src="assets/img/scss-logo.svg" alt="SCSS" class="nav__logo">
+        <header><h3>Table of Contents</h3></header>
+        <div class="nav__list">
+          <a href="#CSS_With_Superpowers" class="nav-link">CSS With Superpowers</a>
+          <a href="#Introduction" class="nav-link">Introduction</a>
+          <a href="#Syntax" class="nav-link">Syntax</a>
+          <a href="#CSS_Extensions" class="nav-link">CSS Extensions</a>
+          <a href="#Comments" class="nav-link">Comments</a>
+          <a href="#Function_Directives" class="nav-link">Function Directives</a>
+      </div>
+      </nav>
+      <div class="content-section">
+        <section class="main-section" id="CSS_With_Superpowers">
+            <header>
+              <h1 class="main-section__title">CSS With Superpowers</h1>
+            </header>
+            <div class="main-section__content">
+              <p class="lead">Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
+            </div>
+          </section>
+        <section class="main-section" id="Introduction">
+          <header>
+            <h2 class="main-section__title">Introduction</h2>
+          </header>
+          <div class="main-section__content">
+            <p>Sass is an extension of CSS that adds power and elegance to the basic language. It allows you to use <a href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_">variables</a>, <a href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html#nested_rules">nested rules</a>, <a href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins">mixins</a>, <a href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html#import">inline imports</a>, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized, and get small stylesheets up and running quickly, particularly with the help of the Compass style library.</p>
+            <h4 class="main-section__subtitle">Features</h4>
+            <ul>
+              <li>Fully CSS-compatible</li>
+              <li>Language extensions such as variables, nesting, and mixins</li>
+              <li>Many <a href="https://sass-lang.com/documentation/Sass/Script/Functions.html">useful functions</a> for manipulating colors and other values</li>
+              <li>Advanced features like <a href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html#control_directives__expressions">control directives</a> for libraries</li>
+              <li>Well-formatted, customizable output</li>
+            </ul>
+          </div>
+        </section>
+        <section class="main-section" id="Syntax">
+          <header><h2 class="main-section__title">Syntax</h2></header>
+          <div class="main-section__content">
+            <p>
+              There are two syntaxes available for Sass. The first, known as SCSS
+              (Sassy CSS) and used throughout this reference, is an extension of
+              the syntax of CSS. This means that every valid CSS stylesheet is a
+              valid SCSS file with the same meaning. In addition, SCSS understands
+              most CSS hacks and vendor-specific syntax, such as <a href="https://msdn.microsoft.com/en-us/library/ms530752.aspx">IE's old <code>filter</code> syntax</a>. This syntax is enhanced with the Sass features described below.
+              Files using this syntax have the <code>.scss</code> extension.
+            </p>
+            <p>
+              The second and older syntax, known as the indented syntax (or
+              sometimes just "Sass"), provides a more concise way of writing CSS.
+              It uses indentation rather than brackets to indicate nesting of
+              selectors, and newlines rather than semicolons to separate
+              properties. Some people find this to be easier to read and quicker
+              to write than SCSS. The indented syntax has all the same features,
+              although some of them have slightly different syntax; this is
+              described in <a href="https://sass-lang.com/documentation/file.INDENTED_SYNTAX.html">the indented syntax reference</a>. Files using this syntax have the <code>.sass</code> extension.
+            </p>
+            <p>Either syntax can <a href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html#import">import</a>
+              files written in the other. Files can be automatically converted from one syntax to the other using the
+              <code>sass-convert</code> command line tool:
+            </p>
+            <pre>
+              <code>
+# Convert Sass to SCSS 
+$ sass-convert style.sass style.scss
+
+# Convert SCSS to Sass 
+$ sass-convert style.scss style.sass
+            </code>
+          </pre>
+          <p>Note that this command does not generate CSS files. For that, use the sass command described elsewhere.</p>
+          </div>
+        </section>
+        <section class="main-section" id="CSS_Extensions">
+          <header><h2 class="main-section__title">CSS Extensions</h2></header>
+          <div class="main-section__content">
+              <h4 class="main-section__subtitle">Nested Rules</h4>
+              <p>Sass allows CSS rules to be nested within one another. The inner rule then only applies within the outer rule's selector. For example:</p>
+              <pre>
+                <code>
+#main p {
+  color: #00ff00;
+  width: 97%;
+
+  .redbox {
+    background-color: #ff0000;
+    color: #000000;
+  }
+}</code>
+              </pre>
+              <p>is compiled to:</p>
+              <pre>
+                <code>
+#main p {
+  color: #00ff00;
+  width: 97%; }
+  #main p .redbox {
+    background-color: #ff0000;
+    color: #000000; }</code>
+              </pre>
+              <p>This helps avoid repetition of parent selectors, and makes complex CSS layouts with lots of nested selectors much simpler. For example:</p>
+              <pre>
+                <code>
+#main {
+width: 97%;
+
+p, div {
+  font-size: 2em;
+  a { font-weight: bold; }
+}
+
+pre { font-size: 3em; }
+}
+                </code>
+              </pre>
+              <p>is compiled to:</p>
+              <pre>
+                <code>
+#main {
+  width: 97%; }
+  #main p, #main div {
+    font-size: 2em; }
+    #main p a, #main div a {
+      font-weight: bold; }
+  #main pre {
+    font-size: 3em; }
+                </code>
+              </pre>
+              <h4 class="main-section__subtitle">Referencing Parent Selectors: &amp;</h4>
+              <p>Sometimes it's useful to use a nested rule's parent selector in other ways than the default. For instance, you might want to have special styles for when that selector is hovered over or for when the body element has a certain class. In these cases, you can explicitly specify where the parent selector should be inserted using the & character. For example:</p>
+              <pre>
+                <code>
+a {
+  font-weight: bold;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+  body.firefox & { font-weight: normal; }
+}
+                </code>
+              </pre>
+              <p>is compiled to:</p>
+              <pre>
+                <code>
+a {
+  font-weight: bold;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+  body.firefox a {
+    font-weight: normal; }
+                </code>
+              </pre>
+              <p>& will be replaced with the parent selector as it appears in the CSS. This means that if you have a deeply nested rule, the parent selector will be fully resolved before the & is replaced. For example:</p>
+              <pre>
+                <code>
+#main {
+  color: black;
+  a {
+    font-weight: bold;
+    &:hover { color: red; }
+  }
+}
+                </code>
+              </pre>
+              <p>is compiled to:</p>
+              <pre>
+                <code>
+#main {
+  color: black; }
+  #main a {
+    font-weight: bold; }
+    #main a:hover {
+      color: red; }
+                </code>
+              </pre>
+              <p>& must appear at the beginning of a compound selector, but it can be followed by a suffix that will be added to the parent selector. For example:</p>
+              <pre>
+                <code>
+#main {
+  color: black;
+  &-sidebar { border: 1px solid; }
+}
+                </code>
+              </pre>
+              <p>is compiled to:</p>
+              <pre>
+                <code>
+#main {
+  color: black; }
+  #main-sidebar {
+    border: 1px solid; }
+                </code>
+              </pre>
+              <p>If the parent selector can't have a suffix applied, Sass will throw an error.</p>
+              <h4 class="main-section__subtitle">Nested Properties</h4>
+              <p>CSS has quite a few properties that are in "namespaces;" for instance, <code>font-family</code>, <cdoe></code>font-size</code>, and <code>font-weight</code> are all in the font namespace. In CSS, if you want to set a bunch of properties in the same namespace, you have to type it out each time. Sass provides a shortcut for this: just write the namespace once, then nest each of the sub-properties within it. For example:</p>
+              <pre>
+                <code>
+.funky {
+  font: {
+    family: fantasy;
+    size: 30em;
+    weight: bold;
+  }
+}
+                </code>
+              </pre>
+              <p>is compiled to:</p>
+              <pre>
+                <code>
+.funky {
+  font-family: fantasy;
+  font-size: 30em;
+  font-weight: bold; }
+                </code>
+              </pre>
+              <p>The property namespace itself can also have a value. For example:</p>
+              <pre>
+                <code>
+.funky {
+  font: 20px/24px fantasy {
+    weight: bold;
+  }
+}
+                </code>
+              </pre>
+              <p>is compiled to:</p>
+              <pre>
+                <code>
+.funky {
+  font: 20px/24px fantasy;
+    font-weight: bold;
+}
+                </code>
+              </pre>
+              <h4 class="main-section__subtitle">Placeholder Selectors: %foo</h4>
+              <p>Sass supports a special type of selector called a "placeholder selector". These look like class and id selectors, except the # or . is replaced by %. They're meant to be used with the <a href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend"><code>@extend</code> directive</a>; for more information see <a href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholders"><code>@extend</code>-Only</a> Selectors.</p>
+              <p>On their own, without any use of <code>@extend</code>, rulesets that use placeholder selectors will not be rendered to CSS.</p>
+            </div>
+        </section>
+        <section class="main-section" id="Comments">
+          <header><h2 class="main-section__title">Comments</h2></header>
+          <div class="main-section__content">
+            <p>Sass supports standard multiline CSS comments with /* */, as well as single-line comments with //. The multiline comments are preserved in the CSS output where possible, while the single-line comments are removed. For example:</p>
+            <pre>
+              <code>
+/* This comment is
+* several lines long.
+* since it uses the CSS comment syntax,
+* it will appear in the CSS output. */
+body { color: black; }
+
+// These comments are only one line long each.
+// They won't appear in the CSS output,
+// since they use the single-line comment syntax.
+a { color: green; }
+              </code>
+            </pre>
+            <p>is compiled to:</p>
+            <pre>
+              <code>
+/* This comment is
+* several lines long.
+* since it uses the CSS comment syntax,
+* it will appear in the CSS output. */
+body {
+  color: black; }
+
+a {
+  color: green; }
+              </code>
+            </pre>
+            <p>When the first letter of a multiline comment is !, the comment will always rendered into css output even in compressed output modes. This is useful for adding Copyright notices to your generated CSS.</p>
+            <p>Since multiline comments become part of the resulting CSS, interpolation within them is resolved. For example:</p>
+            <pre>
+              <code>
+$version: "1.2.3";
+/* This CSS is generated by My Snazzy Framework version #{$version}. */
+              </code>
+            </pre>
+            <p>is compiled to:</p>
+            <pre>
+              <code>
+/* This CSS is generated by My Snazzy Framework version 1.2.3. */
+              </code>
+            </pre>
+          </div>
+        </section>
+        <section class="main-section" id="Function_Directives">
+          <header><h2 class="main-section__title">Function Directives</h2></header>
+          <div class="main-section__content">
+            <p>It is possible to define your own functions in sass and use them in any value or script context. For example:</p>
+            <pre>
+              <code>
+$grid-width: 40px;
+$gutter-width: 10px;
+
+@function grid-width($n) {
+  @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+
+#sidebar { width: grid-width(5); }
+              </code>
+            </pre>
+            <p>Becomes:</p>
+            <pre>
+              <code>
+#sidebar {
+  width: 240px; }
+              </code>
+            </pre>
+            <p>As you can see functions can access any globally defined variables as well as accept arguments just like a mixin. A function may have several statements contained within it, and you must call <code>@return</code> to set the return value of the function.</p>
+            <p>As with mixins, you can call Sass-defined functions using keyword arguments. In the above example we could have called the function like this:</p>
+            <pre>
+              <code>
+#sidebar { width: grid-width($n: 5); }
+              </code>
+            </pre>
+            <p>It is recommended that you prefix your functions to avoid naming conflicts and so that readers of your stylesheets know they are not part of Sass or CSS. For example, if you work for ACME Corp, you might have named the function above <code>-acme-grid-width</code>.</p>
+            <p>User-defined functions also support <a href="https://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_arguments">variable arguments</a> in the same way as mixins.</p>
+            <p>For historical reasons, function names (and all other Sass identifiers) can use hyphens and underscores interchangeably. For example, if you define a function called <code>grid-width</code>, you can use it as <code>grid_width</code>, and vice versa.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>

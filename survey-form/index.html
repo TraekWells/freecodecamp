@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FCC Survey Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-overlay"></div>
+      <h1 id="title">Game of Thrones Survey</h1>
+      <p id="description">Tell us what you think about Game of Thrones</p>
+    </header>
+    <main>
+      <form id="survey-form">
+        <div class="container input-section">
+          <div class="fancy-input">
+            <label for="name" id="name-label">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="fancy-input">
+            <label for="email" id="email-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="fancy-input">
+            <label for="age" id="number-label">Age</label>
+            <input
+              type="number"
+              id="number"
+              name="age"
+              placeholder="Enter your age"
+              min="6"
+              max="110"
+              required
+            />
+          </div>
+          <div class="fancy-input">
+            <label for="favorite-season">Favorite Season</label>
+            <select name="favorite-season" id="dropdown">
+              <option value="" disabled selected>Select a season</option>
+              <option value="season-one">Season One</option>
+              <option value="season-two">Season Two</option>
+              <option value="season-three">Season Three</option>
+              <option value="season-four">Season Four</option>
+              <option value="season-five">Season Five</option>
+              <option value="season-six">Season Six</option>
+              <option value="season-seven">Season Seven</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+        <div class="container">
+          <h3>Do you think Jon Snow survives season 8?</h3>
+          <div class="radio-container">
+            <input type="radio" name="does-jon-survive" id="yes" value="1" />
+            <label for="yes">Yeah for sure</label>
+          </div>
+          <div class="radio-container">
+            <input type="radio" name="does-jon-survive" id="maybe" value="2" />
+            <label for="maybe"
+              >Anything is possible in this show, who knows</label
+            >
+          </div>
+          <div class="radio-container">
+            <input type="radio" name="does-jon-survive" id="no" value="3" />
+            <label for="no">No way he is surviving</label>
+          </div>
+        </div>
+        <hr />
+        <div class="container">
+          <h3>What are your favorite houses?</h3>
+          <div class="fancy-checkboxes">
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                id="house-baratheon"
+                value="house-baratheon"
+              />
+              <label for="house-baratheon"
+                ><img src="assets/img/house-baratheon.png" alt="House Baratheon"
+              /></label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="house-greyjoy" value="house-greyjoy" />
+              <label for="house-greyjoy"
+                ><img src="assets/img/house-greyjoy.png" alt="House Greyjoy"
+              /></label>
+            </div>
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                id="house-lannister"
+                value="house-lannister"
+              />
+              <label for="house-lannister"
+                ><img src="assets/img/house-lannister.png" alt="House Lannister"
+              /></label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="house-martell" value="house-martell" />
+              <label for="house-martell"
+                ><img src="assets/img/house-martell.png" alt="House Martell"
+              /></label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="house-stark" value="house-stark" />
+              <label for="house-stark"
+                ><img src="assets/img/house-stark.png" alt="House Stark"
+              /></label>
+            </div>
+            <div class="checkbox">
+              <input
+                type="checkbox"
+                id="house-targaryen"
+                value="house-targaryen"
+              />
+              <label for="house-targaryen"
+                ><img src="assets/img/house-targaryen.png" alt="House Targaryen"
+              /></label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="house-tully" value="house-tully" />
+              <label for="house-tully"
+                ><img src="assets/img/house-tully.png" alt="House Tully"
+              /></label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" id="house-tyrell" value="house-tyrell" />
+              <label for="house-tyrell"
+                ><img src="assets/img/house-tyrell.png" alt="House Tyrell"
+              /></label>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="container form-section">
+          <h3>Any additional feedback about the show?</h3>
+          <div class="fancy-input">
+            <textarea
+              name="additional-feedback"
+              placeholder="Enter any additional feedback here"
+            ></textarea>
+          </div>
+          <button type="submit" id="submit">Submit Feedback</button>
+        </div>
+      </form>
+    </main>
+    <script src="assets/js/app.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>

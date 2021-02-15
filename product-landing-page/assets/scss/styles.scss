@@ -1,0 +1,344 @@
+//Varibles
+$color-white: #fff;
+$color-gray-1: #f7f7f7;
+$color-gray-2: #999999;
+$color-gray-3: #333333;
+$color-gray-4: #0d0d0d;
+$color-gray-5: #0a0a0a;
+$color-black: #000000;
+
+$font-family-display: "Merriweather";
+$font-family-body: "Noto Sans";
+
+// Breakpoints
+$breakpoint-large: 62.5em;
+$breakpoint-medium: 43.75em;
+$breakpoint-small: 37.5em;
+$breakpoint-smallest: 26.25em;
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  @media only screen and (max-width: $breakpoint-medium) {
+    font-size: 52.5%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0 2rem 2rem 2rem;
+  // @media only screen and (max-width: $breakpoint-medium) {
+  //   padding: 1rem;
+  // }
+  font-family: $font-family-body, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 90rem;
+  width: 100%;
+  margin: 0 auto;
+  @media only screen and (max-width: $breakpoint-large) {
+    max-width: 70rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.flex-container {
+  max-width: 90rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media only screen and (max-width: $breakpoint-large) {
+    max-width: 70rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media only screen and (max-width: $breakpoint-small) {
+    flex-direction: column;
+  }
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-1 {
+  color: currentColor;
+  font-family: $font-family-display;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.heading-3 {
+  font-family: $font-family-display;
+  font-size: 2.3rem;
+  font-weight: normal;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.header {
+  background: linear-gradient(rgba($color-black, 0.85), rgba($color-black, 0.9)),
+    url("/assets/img/header.jpeg");
+  background-size: cover;
+  background-position: top;
+  min-height: 95vh;
+  display: flex;
+  position: relative;
+  margin-bottom: 2rem;
+
+  &__intro {
+    color: $color-white;
+    width: 60rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @media only screen and (max-width: $breakpoint-medium) {
+      width: 80%;
+    }
+
+    &-text {
+      font-size: 2.3rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  padding: 1.5rem 0;
+
+  background-image: linear-gradient(
+    rgba($color-gray-5, 1),
+    rgba($color-gray-5, 0.9) 75%
+  );
+  z-index: 20;
+
+  &__logo {
+    display: block;
+    width: 10rem;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    @media only screen and (max-width: $breakpoint-smallest) {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    li {
+      @media only screen and (max-width: $breakpoint-smallest) {
+        margin-bottom: 1rem;
+      }
+      &:not(:first-child) {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+
+  &__item {
+    color: $color-white;
+    text-decoration: none;
+    border: 2px solid $color-white;
+    padding: 1rem 2rem;
+    transition: 0.2s all;
+    font-size: 1.4rem;
+    display: block;
+    @media only screen and (max-width: $breakpoint-small) {
+      padding: 0.5rem 1rem;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-gray-4;
+      background-color: $color-white;
+    }
+  }
+}
+
+.btn {
+  font-family: $font-family-display;
+  border-radius: 0;
+  background-color: $color-white;
+  border: none;
+  outline: none;
+  padding: 1.5rem 5rem;
+  font-size: 1.8rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s all;
+  align-self: flex-start;
+
+  &:hover,
+  &:focus {
+    color: $color-white;
+    background-color: transparent;
+    border: 2px solid $color-white;
+  }
+}
+
+.video {
+  position: relative;
+  padding: 28.25%;
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.catalog {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__product {
+    display: flex;
+    align-items: center;
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex-direction: column;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+
+    &-pack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-image {
+      display: block;
+      max-height: 25rem;
+      margin-bottom: 1rem;
+    }
+
+    &-review-number {
+      font-size: 1.5rem;
+      color: $color-gray-2;
+      margin-bottom: 0.5rem;
+    }
+
+    &-details {
+      background-color: $color-gray-1;
+      padding: 3.5rem;
+      position: relative;
+      max-width: 50rem;
+      &::before {
+        content: "";
+        position: absolute;
+        height: 3rem;
+        width: 3rem;
+        background-color: $color-gray-4;
+        top: 0;
+        left: 0;
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+      }
+
+      @media only screen and (max-width: $breakpoint-medium) {
+        order: 2;
+      }
+    }
+    &-title {
+      font-family: $font-family-display;
+      font-size: 2.8rem;
+    }
+
+    &-rule {
+      border: none;
+      height: 0.2rem;
+      width: 11rem;
+      background-color: $color-gray-4;
+      display: inline-block;
+    }
+
+    &-description {
+      line-height: 1.9;
+    }
+    &-specs {
+      display: flex;
+      flex-wrap: wrap;
+      &-box {
+        flex: 1 1 50%;
+        margin-top: 1.5rem;
+      }
+      p {
+        color: $color-gray-2;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+.newsletter {
+  background-color: $color-gray-4;
+  color: $color-white;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 5rem 0;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__input {
+    border: 2px solid $color-white;
+    color: $color-gray-1;
+    font-size: 1.7rem;
+    background-color: transparent;
+    padding: 1rem 2rem;
+    outline: none;
+  }
+
+  &__submit {
+    border-radius: 0;
+    font-size: 1.5rem;
+    border: none;
+    padding: 0 2rem;
+    outline: none;
+    background-color: $color-white;
+    font-family: $font-family-display;
+    cursor: pointer;
+    transition: 0.2s all;
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+      background-color: transparent;
+    }
+  }
+}

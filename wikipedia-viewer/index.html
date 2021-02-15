@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Wikipedia Viewer</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="jumbotron bg-light">
+    <div class="container">
+      <h1 class="text-primary">Wikipedia Viewer</h1>
+      <p class="lead text-muted"><i>A freecodecamp project</i></p>
+      <img src="img/wikipedia-logo.png" alt="Wikipedia logo">
+      <p><a href="https://en.wikipedia.org/wiki/Special:Random">Show me a random article</a></p>
+      <input type="text" placeholder="Enter a search term" id="search-text">
+      <button type="submit" class="btn-primary" id="search-button"><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+  <div class="container" id="results">
+    <div class="row"></div>
+  </div>
+  <div class="pt-5 pb-4">
+    <p class="lead text-center">Made by <a href="https://twitter.com/TraekWells" target="_blank">Traek Wells</a></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

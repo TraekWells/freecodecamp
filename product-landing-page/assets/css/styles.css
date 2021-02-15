@@ -1,0 +1,315 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 43.75em) {
+  html {
+    font-size: 52.5%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0 2rem 2rem 2rem;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 90rem;
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 62.5em) {
+  .container {
+    max-width: 70rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.flex-container {
+  max-width: 90rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width: 62.5em) {
+  .flex-container {
+    max-width: 70rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-1 {
+  color: currentColor;
+  font-family: "Merriweather";
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.heading-3 {
+  font-family: "Merriweather";
+  font-size: 2.3rem;
+  font-weight: normal;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), url("/assets/img/header.jpeg");
+  background-size: cover;
+  background-position: top;
+  min-height: 95vh;
+  display: flex;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.header__intro {
+  color: #fff;
+  width: 60rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media only screen and (max-width: 43.75em) {
+  .header__intro {
+    width: 80%;
+  }
+}
+.header__intro-text {
+  font-size: 2.3rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  background-image: linear-gradient(#0a0a0a, rgba(10, 10, 10, 0.9) 75%);
+  z-index: 20;
+}
+.navigation__logo {
+  display: block;
+  width: 10rem;
+}
+.navigation__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+@media only screen and (max-width: 26.25em) {
+  .navigation__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 26.25em) {
+  .navigation__list li {
+    margin-bottom: 1rem;
+  }
+}
+.navigation__list li:not(:first-child) {
+  margin-left: 1.5rem;
+}
+.navigation__item {
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #fff;
+  padding: 1rem 2rem;
+  transition: 0.2s all;
+  font-size: 1.4rem;
+  display: block;
+}
+@media only screen and (max-width: 37.5em) {
+  .navigation__item {
+    padding: 0.5rem 1rem;
+  }
+}
+.navigation__item:hover, .navigation__item:focus {
+  color: #0d0d0d;
+  background-color: #fff;
+}
+
+.btn {
+  font-family: "Merriweather";
+  border-radius: 0;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  padding: 1.5rem 5rem;
+  font-size: 1.8rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s all;
+  align-self: flex-start;
+}
+.btn:hover, .btn:focus {
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+.video {
+  position: relative;
+  padding: 28.25%;
+}
+.video__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.catalog {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.catalog__product {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 43.75em) {
+  .catalog__product {
+    flex-direction: column;
+  }
+}
+.catalog__product:not(:last-child) {
+  margin-bottom: 5rem;
+}
+.catalog__product-pack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.catalog__product-image {
+  display: block;
+  max-height: 25rem;
+  margin-bottom: 1rem;
+}
+.catalog__product-review-number {
+  font-size: 1.5rem;
+  color: #999999;
+  margin-bottom: 0.5rem;
+}
+.catalog__product-details {
+  background-color: #f7f7f7;
+  padding: 3.5rem;
+  position: relative;
+  max-width: 50rem;
+}
+.catalog__product-details::before {
+  content: "";
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  background-color: #0d0d0d;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+@media only screen and (max-width: 43.75em) {
+  .catalog__product-details {
+    order: 2;
+  }
+}
+.catalog__product-title {
+  font-family: "Merriweather";
+  font-size: 2.8rem;
+}
+.catalog__product-rule {
+  border: none;
+  height: 0.2rem;
+  width: 11rem;
+  background-color: #0d0d0d;
+  display: inline-block;
+}
+.catalog__product-description {
+  line-height: 1.9;
+}
+.catalog__product-specs {
+  display: flex;
+  flex-wrap: wrap;
+}
+.catalog__product-specs-box {
+  flex: 1 1 50%;
+  margin-top: 1.5rem;
+}
+.catalog__product-specs p {
+  color: #999999;
+  font-size: 1.4rem;
+}
+
+.newsletter {
+  background-color: #0d0d0d;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 5rem 0;
+}
+.newsletter__form {
+  display: flex;
+  justify-content: center;
+}
+.newsletter__input {
+  border: 2px solid #fff;
+  color: #f7f7f7;
+  font-size: 1.7rem;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  outline: none;
+}
+.newsletter__submit {
+  border-radius: 0;
+  font-size: 1.5rem;
+  border: none;
+  padding: 0 2rem;
+  outline: none;
+  background-color: #fff;
+  font-family: "Merriweather";
+  cursor: pointer;
+  transition: 0.2s all;
+}
+.newsletter__submit:hover, .newsletter__submit:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,245 @@
+.fight-card-container .fight-card, .featured #tribute-info {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.07), 0 3px 13px rgba(0, 0, 0, 0.05);
+}
+
+.image-block, .fight-card-container .fight-card {
+  border-radius: 8px;
+}
+
+.fight-card-container .fight-card, .featured #tribute-info {
+  padding: 25px;
+}
+
+footer, .text-container, .section-light {
+  padding: 25px 0;
+}
+
+.separator {
+  margin-bottom: 25px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p, html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  margin: auto;
+  max-width: 800px;
+}
+
+.top-bar {
+  background-color: #760a0a;
+  height: 8px;
+}
+
+.section-light {
+  background-color: #f3f1ec;
+}
+.section-light.intro-section {
+  height: 325px;
+}
+.section-light h1,
+.section-light h2,
+.section-light h3 {
+  text-align: center;
+}
+
+#title {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+#title + h3 {
+  color: #615c51;
+  font-weight: normal;
+  text-align: center;
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 33px;
+  margin-bottom: 30px;
+}
+
+.featured {
+  display: flex;
+  align-items: center;
+  margin-top: -180px;
+}
+.featured #img-div {
+  flex: 2;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.featured #img-div #image {
+  display: block;
+  object-fit: cover;
+  max-width: 100%;
+}
+.featured #img-div #img-caption {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #26231c;
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+}
+.featured #tribute-info {
+  flex: 1;
+  background-color: white;
+  border-radius: 0 8px 8px 0;
+  width: 40%;
+}
+.featured #tribute-info .tribute-block:not(:last-child) {
+  margin-bottom: 15px;
+}
+.featured #tribute-info .tribute-label {
+  font-size: 15px;
+  margin-bottom: 2px;
+  color: #a09788;
+}
+.featured #tribute-info .tribute-value {
+  font-size: 23px;
+  color: #26231c;
+}
+
+.separator {
+  background-color: #760a0a;
+  border-radius: 5px;
+  border: none;
+  height: 4px;
+  width: 100px;
+  display: inline-block;
+  margin-top: 0;
+}
+
+.body-text {
+  padding-left: 80px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.fight-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-template-rows: auto;
+  grid-row-gap: 20px;
+}
+.fight-card-container .fight-card {
+  background-color: white;
+}
+.fight-card-container .fight-card h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.fight-card-container .fight-card .fight-card-details {
+  color: #615c51;
+  font-size: 16px;
+}
+.fight-card-container .fight-card .fight-card-details:not(:last-child) {
+  margin-bottom: 7px;
+}
+.fight-card-container .fight-card .fight-card-date {
+  margin-bottom: 25px;
+}
+.fight-card-container .fight-card-results {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  align-items: center;
+}
+.fight-card-container .fight-card-results .victory {
+  background-color: #7bb027;
+  color: white;
+  padding: 7px 20px;
+  border-radius: 25px;
+}
+
+.image-block {
+  overflow: hidden;
+  margin-left: -80px;
+  display: inline-block;
+}
+.image-block img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+footer {
+  background-color: #760a0a;
+  color: white;
+}
+footer a {
+  color: white;
+}
+
+@media screen and (max-width: 840px) {
+  .container {
+    width: 90%;
+  }
+
+  .featured {
+    flex-direction: column;
+  }
+  .featured #tribute-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    border-radius: 0 0 8px 8px;
+  }
+  .featured #tribute-info .tribute-value {
+    font-size: 20px;
+  }
+  .featured #img-div {
+    border-radius: 8px 8px 0 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .fight-card-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 500px) {
+  .body-text {
+    padding: 0;
+  }
+
+  .section-light.intro-section {
+    height: 300px;
+  }
+
+  #title {
+    font-size: 30px;
+  }
+  #title + h3 {
+    font-size: 18px;
+  }
+
+  .image-block {
+    margin-left: 0;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

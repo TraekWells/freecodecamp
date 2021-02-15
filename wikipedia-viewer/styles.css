@@ -1,0 +1,62 @@
+body {
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+}
+
+.jumbotron {
+  text-align: center;;
+}
+
+.jumbotron img {
+  display: inline-block;
+  margin: 30px 0;
+  max-width: 250px;
+}
+
+input {
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, .125);
+  padding: 10px 20px;
+  width: 300px;
+}
+
+button {
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+.card {
+  height: 400px;
+  margin-bottom: 30px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text {
+  flex-grow: 1;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .card {
+    height: 475px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    height: auto;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+}
